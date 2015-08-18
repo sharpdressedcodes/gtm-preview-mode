@@ -1,0 +1,13 @@
+{
+  "name": "gtm-preview-mode",
+  "title": "GTM Preview Mode",
+  "id": "jid1-MlxXnYdBEpgHAQ",
+  "description": "This will add a checkbox under the Preview button, giving you the power to turn debugging on or off",
+  "author": "Greg Kappatos (http://websiteconnect.com.au/)",
+  "homepage": "http://websiteconnect.com.au/",
+  "license": "MPL 2.0",
+  "version": "0.1",
+  "permissions": {"private-browsing": true},
+  "icon": "data/gtm-preview-mode-48.png",
+  "icon64": "data/gtm-preview-mode-64.png"
+}
