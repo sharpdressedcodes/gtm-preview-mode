@@ -4,7 +4,7 @@ var tabs = require('sdk/tabs');
 var self = require('sdk/self');
 var worker = null;
 const regex = /http(s)?:\/\/(www|tagmanager)\.google\.com(\/tagmanager)?\/*/;
-const contentScriptFiles = [self.data.url('gtm-preview-mode.js')];
+const contentScriptFiles = [self.data.url('injector.js')];
 
 tabs.on('ready', function(tab){
 

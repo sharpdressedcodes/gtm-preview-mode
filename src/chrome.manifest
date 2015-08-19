@@ -1,0 +1,2 @@
+content     gtm-preview-mode    chrome/content/
+content     gtm-preview-mode    chrome/content/ contentaccessible=yes
