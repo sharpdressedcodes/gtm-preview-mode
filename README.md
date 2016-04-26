@@ -1,5 +1,5 @@
 ### Google Tag Manager Preview Mode
-#### v0.1
+#### v0.2
 
 This will add a checkbox under the Preview button, giving you the power to turn debugging on or off
 

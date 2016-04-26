@@ -6,7 +6,7 @@
   "author": "Greg Kappatos (http://websiteconnect.com.au/)",
   "homepage": "http://websiteconnect.com.au/",
   "license": "MPL 2.0",
-  "version": "0.1",
+  "version": "0.2",
   "permissions": {"private-browsing": true},
   "icon": "data/gtm-preview-mode-48.png",
   "icon64": "data/gtm-preview-mode-64.png"

@@ -4,9 +4,9 @@
 
     var APP_NAME = 'gtm.application';
     var PREVIEW_CONTAINER = 'QUICK_PREVIEW';
-    var PAGE_CONTROLLER = 'containerPageCtrl';
+    var PAGE_CONTROLLER = 'pageCtrl';
     var ANGULAR_APP_ATTRIBUTES = [
-        'np-app',
+        'ng-app',
         'data-ng-app'
     ];
     var DEBUG = {
@@ -38,15 +38,13 @@
 
             var element = __$('#bubble-2 .gtm-container-page-publish-dropdown-button-wrapper');
 
-            if ($previewCheckboxContent === null && element !== null){
+            if (element && !$previewCheckboxContent){
                 createElements();
             }
 
             if (typeof window.gregGtmPageController === 'undefined'){
                 var scope = getAngularScope(APP_NAME, PAGE_CONTROLLER);
-                if (scope !== null){
-                    window.gregGtmPageController = scope[PAGE_CONTROLLER];
-                }
+                scope && (window.gregGtmPageController = scope[PAGE_CONTROLLER]);
             }
 
         });
@@ -222,7 +220,7 @@
 
         var div = __$('div', {
             'class': 'gtm-field-group',
-            'style': 'margin: 10px 0 0 0;'
+            'style': 'margin: 10px 0 0 0; padding: 0;'
         });
         var label = __$('label', {
             'for': id,
@@ -231,7 +229,8 @@
         var checkbox = __$('gtm-checkbox', {
             'class': 'ng-scope ng-pristine ng-untouched ng-valid',
             'id': id,
-            'name': id
+            'name': id,
+            'style': 'margin: -5px 5px 0 0'
         });
         var div2 = __$('div', {'class': 'material-container'});
         var div3 = __$('div', {'class': 'material-icon'});
@@ -291,7 +290,7 @@
             $oldButton.remove();
             $oldButtonContainer = __$('div', {'style': 'display: none;'}, $oldButton);
 
-            var content = createCheckBoxContent(CHECKBOX_DEBUG_ID, ' Turn on debugging', function(event){
+            var content = createCheckBoxContent(CHECKBOX_DEBUG_ID, ' Debug', function(event){
                 event.stopPropagation();
                 checkCheckbox($chkDebug.element);
             });
@@ -321,12 +320,8 @@
     }
 
     window.gregGtmPreviewMode = {
-        enable: function(){
-            enable();
-        },
-        disable: function(){
-            disable();
-        },
+        enable: enable,
+        disable: disable,
         getAngularScope: getAngularScope
     };
 
